@@ -1,0 +1,15 @@
+<h1>Create Todo</h1>
+
+<%= link_to "Add a new todo", new_todo_path %>
+
+<%= form_for @todo do |form| %>
+  <%= form.label :title %>
+  <%= form.text_field :title %>
+  <%= form.button "Submit", class: "btn-submit" %>>
+<% end %>
+
+<ul class="todos">
+  <% @todos.each do |todo| %>
+    <li><%= todo.title %></li>
+  <% end %>
+</ul>
