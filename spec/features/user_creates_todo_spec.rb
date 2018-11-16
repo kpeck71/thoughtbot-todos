@@ -2,7 +2,7 @@ require "rails_helper"
 
 feature "User creates todo" do
   scenario "successfully" do
-    visit new_todo_path
+    sign_in
     expect(page).to have_css 'h1', text: 'Create Todo'
     click_on "Add a new todo"
     fill_in "Title", with: "Buy milk"
